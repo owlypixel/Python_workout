@@ -1,4 +1,4 @@
-﻿#! python3
+#! python3
 # -*- coding: utf-8 -*-
 
 #pip install openpyxl
@@ -19,3 +19,10 @@ print(str(sheet['B2'].value))
 
 for i in range(1, 10):
 	print(i, sheet.cell(row=i, column=1).value)
+
+http://192.168.1.4:554
+ rtsp://192.168.1.4:554/ch0.h264
+
+ifconfig ra0 192.168.1.100 
+netmask 255.255.255.0
+route add default gw 192.168.1.1
