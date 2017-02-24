@@ -19,7 +19,7 @@ def serve_client(conn, addr):
         clients.remove(conn)
 
 def send_message(data, self):
-    for connection in clients:
+    for conn in clients:
         if conn == self:
             continue
         conn.sendall(data)
