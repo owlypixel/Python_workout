@@ -1,0 +1,32 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css">
+<link rel="stylesheet"  href="/static/css/style.css">
+{% endblock %}
+
+{% block navbar %}
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="container">
+			<a class="navbar-brand" href="#">Weather</a>
+			<select class="selectpicker" data-width="fit">
+			    <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
+			  <option  data-content='<span class="flag-icon flag-icon-ru"></span> Russian'>Russian</option>
+			</select>
+		</div>
+	</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"></script>
+  <script src="/static/js/main.js"></script>
+{% endblock %}

@@ -1,0 +1,2 @@
+1) How to add static files to the header? (styles, other)
+2) How to setup and watch on file changes?
