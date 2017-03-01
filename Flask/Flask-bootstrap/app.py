@@ -1,9 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask, request, render_template
 from flask_bootstrap import Bootstrap
+from flask_babel import Babel, gettext
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
+babel = Babel(app)
 app.debug = True
+app.config.from_pyfile('config.py')
+
+@babel.localeselector
+def get_locale():
+	# return 'en'
+	return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
 
 @app.route('/')
 def index():
@@ -24,6 +32,10 @@ def index():
 	}
 	highlight = {'min': 40, 'max': 50, 'rain': 6}
 	return render_template('index.html', city="Portland, OR", months=months, weather=weather, highlight=highlight)
+
+# @app.route('/one')
+# def one():
+# 	return gettext('Hello')
 
 @app.errorhandler(404)
 def not_found(e):

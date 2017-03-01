@@ -1,2 +1,10 @@
 1) How to add static files to the header? (styles, other)
 2) How to setup and watch on file changes?
+
+
+Sources:
+https://pythonhosted.org/Flask-Babel/
+https://phraseapp.com/blog/posts/python-localization-for-flask-applications/
+https://www.safaribooksonline.com/blog/2013/11/27/flask-internationalization-and-localization/
+https://damyanon.net/flask-series-internationalization/
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiv-i18n-and-l10n
