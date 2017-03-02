@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template
 from flask_bootstrap import Bootstrap
 from flask_babel import Babel, gettext
+from flask import url_for as flask_url_for
+from flask import g
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
@@ -8,12 +10,36 @@ babel = Babel(app)
 app.debug = True
 app.config.from_pyfile('config.py')
 
+@app.before_request
+def before():
+	if request.view_args and 'lang' in request.view_args:
+		if request.view_args['lang'] not in ('en', 'ru'):
+			return render_template('404.html')
+	if request.view_args and 'lang' in request.view_args:
+		g.current_lang = request.view_args['lang']
+		request.view_args.pop('lang')
+
+@app.context_processor
+def inject_url_for():
+    return {
+        'url_for': lambda endpoint, **kwargs: flask_url_for(
+            endpoint, lang=g.get('current_lang', 'en'), **kwargs
+        )
+    }
+
+url_for = inject_url_for()['url_for']
+
 @babel.localeselector
 def get_locale():
-	# return 'en'
-	return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
+    return g.get('current_lang', 'en')
+
+# @babel.localeselector
+# def get_locale():
+# 	return 'ru'
+	# return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
 
 @app.route('/')
+@app.route('/<lang>/')
 def index():
 	months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December']
 	weather = {
