@@ -8,18 +8,17 @@ $(function(){
 		} else {
 			lang = 'en'
 		}
-	  	console.log(lang);
-
+		
+		var regex = /\/\w{2}\//g;
 		var url = window.location.href; 
-
-		// if (url.endsWith('/ru')){
-		//    url += lang
-		// }
-		window.location.href = url + lang;
-
-		// var stateObj = { foo: "bar" };
-		// console.log(window.location.href)
-		// location.replace('ru')
+		var replaced = url.search(regex) >= 0;
+		if(replaced){
+		    new_url = url.replace(regex, '/' + lang + '/');
+		} else {
+			new_url = url + lang;
+		}
+		window.location.href = new_url;
+		
 	});
 
 });
