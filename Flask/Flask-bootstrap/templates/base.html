@@ -5,12 +5,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css">
 <link rel="stylesheet"  href="/static/css/style.css">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 {% endblock %}
 
 {% block navbar %}
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container">
-			<a class="navbar-brand" href="#">Weather</a>
+			<a class="navbar-brand" href="{{ url_for('index')}}">Weather</a>
 			<select id="lang-selector" class="selectpicker" data-width="fit">
 			    <option  {% if g.current_lang=='en' %}selected{% endif %} data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
 			  <option  {% if g.current_lang=='ru' %}selected{% endif %} data-content='<span class="flag-icon flag-icon-ru"></span> Russian'>Russian</option>

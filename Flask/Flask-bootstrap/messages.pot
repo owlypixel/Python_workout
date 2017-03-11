@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-01 22:05+0200\n"
+"POT-Creation-Date: 2017-03-11 21:53+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,18 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
+
+#: templates/404.html:5
+msgid "Not found"
+msgstr ""
+
+#: templates/404.html:6
+msgid "Return to the home page"
+msgstr ""
+
+#: templates/about.html:5
+msgid "About us"
+msgstr ""
 
 #: templates/index.html:4
 msgid "Weather averages for"

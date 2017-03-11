@@ -3,12 +3,16 @@ from flask_bootstrap import Bootstrap
 from flask_babel import Babel, gettext
 from flask import url_for as flask_url_for
 from flask import g
+from flask_debugtoolbar import DebugToolbarExtension
+
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
 babel = Babel(app)
 app.debug = True
 app.config.from_pyfile('config.py')
+app.config['SECRET_KEY'] = 'jp1387hs9438h'
+toolbar = DebugToolbarExtension(app)
 
 @app.before_request
 def before():
@@ -16,6 +20,7 @@ def before():
 		if request.view_args['lang'] not in ('en', 'ru'):
 			return render_template('404.html')
 	if request.view_args and 'lang' in request.view_args:
+		print(request.view_args )
 		g.current_lang = request.view_args['lang']
 		request.view_args.pop('lang')
 
@@ -59,13 +64,13 @@ def index():
 	highlight = {'min': 40, 'max': 50, 'rain': 6}
 	return render_template('index.html', city="Portland, OR", months=months, weather=weather, highlight=highlight)
 
-# @app.route('/one')
-# def one():
-# 	return gettext('Hello')
+@app.route('/<lang>/about')
+def about():
+	return render_template('about.html')
 
 @app.errorhandler(404)
 def not_found(e):
-	return render_template('404.html')
+	return render_template('404.html'), 404
 
 if __name__ == '__main__':
 	app.run()

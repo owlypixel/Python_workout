@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-01 22:05+0200\n"
-"PO-Revision-Date: 2017-03-01 22:05+0200\n"
+"POT-Creation-Date: 2017-03-11 21:53+0200\n"
+"PO-Revision-Date: 2017-03-11 21:33+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -19,11 +19,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
+#: templates/404.html:5
+msgid "Not found"
+msgstr "Страница не найдена"
+
+#: templates/404.html:6
+msgid "Return to the home page"
+msgstr "Вернуться на главную"
+
+#: templates/about.html:5
+msgid "About us"
+msgstr "О нас"
+
 #: templates/index.html:4
 msgid "Weather averages for"
-msgstr "Средние значения погоды для"
+msgstr "Средняя температура для"
 
 #: templates/index.html:8
 msgid "Weather averages"
-msgstr "Статистика погоды"
+msgstr "Средняя температура"
 
