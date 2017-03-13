@@ -1,0 +1,11 @@
+Steps to generate a new website with Django
+- django-admin startproject electronic_kit
+- python manage.py migrate
+- python manage.py runserver
+- django-admin startapp products
+- pip install django-debug-toolbar
+- add debug_toolbar, products in INSTALLED APPS section
+- add 'debug_toolbar.middleware.DebugToolbarMiddleware' to MIDDLEWARE
+- add url settings
+- add IP
+- add .gitignore
