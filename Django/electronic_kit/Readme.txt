@@ -9,3 +9,20 @@ Steps to generate a new website with Django
 - add url settings
 - add IP
 - add .gitignore
+_________________________
+- create model
+- python manage.py makemigrations
+- python manage.py migrate
+_________________________
+- python manage.py shell
+- create 2 products in shell
+__________________________
+- python manage.py createsuperuser
+- pass electrokit
+_________________________
+- register Product in admin
+_________________________
+- change model (add category)
+- apply migrations
+- register category in admin.py
+- create relationship between product and category in admin
