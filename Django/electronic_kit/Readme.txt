@@ -26,3 +26,11 @@ _________________________
 - apply migrations
 - register category in admin.py
 - create relationship between product and category in admin
+_________________________
+- add list catogories methods
+- add class ProductAdmin to enhance admin area
+- enhancing columns in the admin view for products
+- sorting in columns
+__________________________
+- creating home url with products list
+- rendering first template

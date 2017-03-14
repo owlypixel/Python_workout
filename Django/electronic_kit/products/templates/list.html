@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Hey, this is Django!</h1>
+	{% if request.user.is_authenticated %}
+		<p>Hello, {{ request.user.username |title }}, you last logged in at: {{ request.user.last_login |date:"D d M Y" }}</p>
+	{% else %}
+		<p>Hello, stranger</p>
+	{% endif %}
+	
+</body>
+</html>
