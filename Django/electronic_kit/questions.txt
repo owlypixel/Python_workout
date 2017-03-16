@@ -1,0 +1,1 @@
+products = Product.objects.exclude(date__isnull=True)  - what __ means?

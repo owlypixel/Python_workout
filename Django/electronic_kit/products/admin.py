@@ -3,7 +3,7 @@ from .models import Product, Category
 
 class ProductAdmin(admin.ModelAdmin):
 	fieldsets = [
-		('Product details', {'fields': ['title', 'categories']}),
+		('Product details', {'fields': ['title', 'categories', 'description']}),
 		('Is new', {'fields': ['is_new', 'date']})
 	]
 

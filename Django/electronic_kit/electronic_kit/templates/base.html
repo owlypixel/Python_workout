@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name='description' content="Awesome electronics kit catalog">
+	<meta name='viewport' content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700|Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<img class="logo" src="{% static 'img/logo.png' %}" alt="">
+			<div class="welcome">
+				{% if request.user.is_authenticated %}
+					<p>Hello, {{ request.user.username |title }}, you last logged in at: {{ request.user.last_login |date:"D d M Y" }}</p>
+				{% else %}
+					<p>Hello, stranger</p>
+				{% endif %}
+			</div>
+		</header>
+		<main>
+			{% block content %}{% endblock %}
+		</main>
+		<footer>
+			<p> Electronic components catalog!</p>
+		</footer>
+	</div>
+</body>
+</html>

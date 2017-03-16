@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	<h1>Hey, this is Django!</h1>
-	{% if request.user.is_authenticated %}
-		<p>Hello, {{ request.user.username |title }}, you last logged in at: {{ request.user.last_login |date:"D d M Y" }}</p>
-	{% else %}
-		<p>Hello, stranger</p>
-	{% endif %}
-	
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+	<h1> You currently have {{ products.count }} product(s)</h1>
+	{% for product in products %}
+		<h2>{{ product.title}} in {{ product.list_categories }} </h2>
+		{% if product.is_new %}
+			<span class="highlight">New</span>
+		{% endif %}
+		{{ product.description }}
+	{% endfor %}
+{% endblock %}
