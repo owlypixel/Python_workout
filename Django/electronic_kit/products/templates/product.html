@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="product">
+		<h3>{{ product.title }}</h3>
+		<p>{% for category in product.categories.all %} {{ category.name }}{% endfor %}</p>
+		{% if product.is_new %} <p class="highlight">Is new</p>{% endif %}
+	</div>
+{% endblock %}

@@ -1,1 +1,3 @@
 products = Product.objects.exclude(date__isnull=True)  - what __ means?
+when to use class-based views?
+class-based generic views?

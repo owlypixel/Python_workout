@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls import include, url
-from products.views import list_products
+from products.views import list_products, CategoriesList, ProductDetail, CategoryDetail
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', list_products, name='products'),
+    url(r'^categories/$', CategoriesList.as_view(), name='categories'),
+    url(r'^products/(?P<pk>[-\w]+)/$', ProductDetail.as_view(), name='product-detail'),
+    url(r'^categories/(?P<pk>[-\w]+)/$', CategoryDetail.as_view(), name='category-detail'),
 ]
 
 if settings.DEBUG:
