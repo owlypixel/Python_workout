@@ -1,0 +1,8 @@
+<div class="product">
+	<h3><a href="{% url 'product-detail' product.pk %}">{{ product.title }}</a></h3>
+	<p>{% for category in product.categories.all %}
+		<a href="{% url 'category-detail' category.pk %}">
+			{{ category.name }}</a>
+		{% endfor %}</p>
+	{% if product.is_new %} <p class="highlight">Is new</p>{% endif %}
+</div>

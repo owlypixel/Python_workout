@@ -22,6 +22,10 @@
 				{% endif %}
 			</div>
 		</header>
+		<nav>
+			<a href="{% url 'products' %}">Products</a>
+			<a href="{% url 'categories' %}">Categories</a>
+		</nav>
 		<main>
 			{% block content %}{% endblock %}
 		</main>

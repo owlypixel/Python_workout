@@ -2,9 +2,6 @@
 {% block content %}
 		<h3>{{ category.title }}</h3>
 		{% for product in category.products.all %}
-			<div class="product">
-				<h3>{{ product.title }}</h3>
-				{% if product.is_new %} <p class="highlight">Is new</p>{% endif %}
-			</div>
+			{% include 'product-detail.html' %}
 		{% endfor %}
 {% endblock %}
