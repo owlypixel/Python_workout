@@ -7,6 +7,7 @@ class Product(models.Model):
 	categories = models.ManyToManyField("Category", related_name="products")
 	date = models.DateTimeField(blank=True, null=True)
 	is_new = models.BooleanField(default=False, verbose_name="Is this shit new?")
+	image = models.FileField( blank=True)
 
 	def __str__(self):
 		return "{} in categories: {}".format(self.title, self.list_categories())

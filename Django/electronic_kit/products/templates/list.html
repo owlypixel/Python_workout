@@ -6,6 +6,9 @@
 		{% if product.is_new %}
 			<span class="highlight">New</span>
 		{% endif %}
-		{{ product.description }}
+		<p>{{ product.description }}</p>
+		{% if product.image %}
+		    <img src="{{ product.image.url }}">
+		{% endif %}
 	{% endfor %}
 {% endblock %}
