@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "draw_a_box.py", line 14, in <module>
+    print_a_box('**', 20, 5)
+  File "draw_a_box.py", line 5, in print_a_box
+    raise Exception('Symbol needs to be a string with the length 1')
+Exception: Symbol needs to be a string with the length 1
+------------------------------------------------------------Traceback (most recent call last):
+  File "draw_a_box.py", line 14, in <module>
+    print_a_box('**', 20, 5)
+  File "draw_a_box.py", line 5, in print_a_box
+    raise Exception('Symbol needs to be a string with the length 1')
+Exception: Symbol needs to be a string with the length 1
+------------------------------------------------------------Traceback (most recent call last):
+  File "draw_a_box.py", line 14, in <module>
+    print_a_box('**', 20, 5)
+  File "draw_a_box.py", line 5, in print_a_box
+    raise Exception('Symbol needs to be a string with the length 1')
+Exception: Symbol needs to be a string with the length 1
+------------------------------------------------------------
