@@ -34,3 +34,10 @@ _________________________
 __________________________
 - creating home url with products list
 - rendering first template
+-----------------------------------
+Adding REST API
+- pip install djangorestframework
+- add framework in INSTALLED APPS settings
+- make a serializer class for models (serializers.py)
+- in views.py import all needed stuff and make a class-based view
+- in app-level urls.py import stuff and add import it in the main urls.py
